@@ -34,33 +34,33 @@ if __name__ == '__main__':
         
     def rustsword():
         if rustsword == False:
-            attack == (attack + 0)
-            durability == (durability + 0)
+            attack = (attack + 0)
+            durability = (durability + 0)
         elif rustsword == True:
-            attack == (attack + 2)
-            durability == (durability + 15)
+            attack = (attack + 2)
+            durability = (durability + 15)
           
             if health == (health - 1):
-                durability == (durability - 1)
+                durability = (durability - 1)
                 
             if durability == (0):
                 print("rustsword broke.")
-                rustsword == False
+                rustsword = False
                 
     def woodshield():
         if woodshield == False:
-            attack == (attack + 0)
-            durability1 == (durability1 + 0)
+            attack = (attack + 0)
+            durability1 = (durability1 + 0)
         elif rustsword == True:
-            attack == (armor + 2)
-            durability1 == (durability1 + 15)
+            attack = (armor + 2)
+            durability1 = (durability1 + 15)
           
             if armor == (armor - 1):
-                durability1 == (durability1 - 1)
+                durability1 = (durability1 - 1)
                 
             if durability1 == (0):
                 print("woodshield broke")
-                woodshield == False
+                woodshield = False
                 
     def antswarm():
         print("A large swarm of ants aproaches.")
@@ -76,15 +76,15 @@ if __name__ == '__main__':
                 loop = 7
         if random.randomint(1,4) == 3:
             print("You escape the area!")
-            loop + -1
+            loop - 1
             if loop >= 7:
                 loop = 7
         if random.randomint(1,4) == 4:
             print("You escape the area!")
-            loop + -2
+            loop - 2
             if loop >= 7:
                 loop = 7
-          
+
     def snakepit():
         print("You stand in a snakepit.")
         print("May god have mercy on you.")
@@ -342,9 +342,7 @@ if __name__ == '__main__':
     #EVOLVING THREAT_________ 
     #EVOLVING THREAT______ 
     #EVOLVING THREAT___
-                
-                
-                
+   
     def stats():
         print ("health: ", health)
         print ("armor: ", armor)
@@ -369,18 +367,535 @@ if __name__ == '__main__':
         # print the choices available
         for choice in options:
             print(choice, options[choice])
+    
+    def shrimp():
+        etype = (1)
+        ehealth = (2)
+        eh = (2)
+        earmor = (1)
+        eattack = (2)
+        espeed = (4)
+        estealth = (3)
+        esize = (1)
+        eperception = (3)
+        dm()
+    
+    def mantisshrimp():
+        etype = (2)
+        ehealth = (4)
+        eh = (4)
+        earmor = (3)
+        eattack = (4)
+        espeed = (2)
+        estealth = (1)
+        esize = (4)
+        eperception = (4)
+        dm()
+    
+    def pistolshrimp():
+        etype = (3)
+        ehealth = (5)
+        eh = (5)
+        earmor = (4)
+        eattack = (7)
+        espeed = (1)
+        estealth = (1)
+        esize = (4)
+        eperception = (2)
+        dm()
+    
+    def lobster():
+        etype = (4)
+        ehealth = (5)
+        eh = (5)
+        earmor = (5)
+        eattack = (4)
+        espeed = (1)
+        estealth = (2)
+        esize = (4)
+        eperception = (3)
+        dm()
         
+    def crab():
+        etype = (5)
+        ehealth = (7)
+        eh = (7)
+        earmor = (4)
+        eattack = (3)
+        espeed = (4)
+        estealth = (3)
+        esize = (3)
+        eperception = (4)
+        dm()
+    
+    def ant():
+        etype = (6)
+        ehealth = (.5)
+        eh = (.5)
+        earmor = (.5)
+        eattack = (1)
+        espeed = (2)
+        estealth = (7)
+        esize = (.5)
+        eperception = (7)
+        dm()
+    
+    def evboss1():
+        etype = (7)
+        ehealth = (3)
+        eh = (3)
+        earmor = (1)
+        eattack = (2)
+        espeed = (4)
+        estealth = (3)
+        esize = (2)
+        eperception = (3)
+        dm()
+    
+    def win():
+        print("You're winner. (intentionale)")
+        gold = (gold + (awardgold * esize))
+        etype = (0)
+        ehealth = (0)
+        earmor = (0)
+        eattack = (0)
+        espeed = (0)
+        estealth = (0)
+        esize = (0)
+        eperception = (0)
+        wait_for_input()
+        clear_screen()
+    def esc():
+        print("Your run away.")
+        wait_for_input()
+        clear_screen()
+        etype = (0)
+        ehealth = (0)
+        earmor = (0)
+        eattack = (0)
+        espeed = (0)
+        estealth = (0)
+        esize = (0)
+        eperception = (0)
+    
+    def dm2():
+        if ehealth > 0:
+             if earmor > 0:
+                ehealth = (ehealth - (attack / 2))
+                earmor = (earmor - (attack / 2))
+                if health > 0:
+                    if armor > 0:
+                        health = (health - (eattack / 2))
+                        armor = (armor - (eattack / 2))
+                        if ehealth <= (eh * 0.25):
+                            win()
+                        if ehealth > (eh * 0.25):
+                            stats()
+                            second = input("Would you like to escape? 'yes' or 'no'")
+                            if second.lower() == ("yes"):
+                                esc()
+                            if second.lower() == ("no"):
+                                dm2()
+                            else:
+                                print("try again")
+                                wait_for_input()
+                                clear_screen()
+                                        
+                    if armor <= 0:
+                        health = (health - eattack)
+                        if ehealth <= (eh * 0.25):
+                            win()
+                            if ehealth > (eh * 0.25):
+                                stats()
+                                second = input("Would you like to escape? 'yes' or 'no'")
+                                if second.lower() == ("yes"):
+                                    esc()
+                                if second.lower() == ("no"):
+                                    dm2()
+                                else:
+                                    print("try again")
+                                    wait_for_input()
+                                    clear_screen()
+                    
+             if earmor <= 0:
+                ehealth = (ehealth - attack)
+                if health > 0:
+                    if armor > 0:
+                        health = (health - (eattack / 2))
+                        armor = (armor - (eattack / 2))
+                        if ehealth <= (eh * 0.25):
+                             win()
+                        if ehealth > (eh * 0.25):
+                            stats()
+                            second = input("Would you like to escape? 'yes' or 'no'")
+                            if second.lower() == ("yes"):
+                                esc()
+                            if second.lower() == ("no"):
+                                dm2()
+                            else:
+                                print("try again")
+                                wait_for_input()
+                                clear_screen()
+                                        
+                if armor <= 0:
+                    health = (health - eattack)
+                    if ehealth <= (eh * 0.25):
+                        win()
+                        if ehealth > (eh * 0.25):
+                            stats()
+                            second = input("Would you like to escape? 'yes' or 'no'")
+                            if second.lower() == ("yes"):
+                                esc()
+                            if second.lower() == ("no"):
+                                dm2()
+                            else:
+                                print("try again")
+                                wait_for_input()
+                                clear_screen()
+    
+   
+   
+    def dm():
+        if estealth > perception:
+            if perception < espeed:
+                if espeed > size:
+                    eattack = (eattack * 1.3)
+                if esize > size:
+                    eattack = (eattack * 1.3)
+                if health > 0:
+                    if armor > 0:
+                        health = (health - (eattack / 2))
+                        armor = (armor - (eattack / 2))
+                        if ehealth > 0:
+                            if earmor > 0:
+                                ehealth = (ehealth - (attack / 2))
+                                earmor = (earmor - (attack / 2))
+                                if ehealth <= (eh * 0.25):
+                                    win()
+                                if ehealth > (eh * 0.25):
+                                    stats()
+                                    second = input("Would you like to escape? 'yes' or 'no'")
+                                    if second.lower() == ("yes"):
+                                        esc()
+                                    if second.lower() == ("no"):
+                                        dm2()
+                                    else:
+                                        print("try again")
+                                        wait_for_input()
+                                        clear_screen()
+                                         
+                        if earmor <= 0:
+                            ehealth = (ehealth - attack)
+                            if ehealth <= (eh * 0.25):
+                                win()
+                                if ehealth > (eh * 0.25):
+                                    stats()
+                                second = input("Would you like to escape? 'yes' or 'no'")
+                                if second.lower() == ("yes"):
+                                    esc()
+                                if second.lower() == ("no"):
+                                    dm2()
+                                else:
+                                    print("try again")
+                                    wait_for_input()
+                                    clear_screen()
+                        
+                if armor <= 0:
+                     health = (health - eattack)
+                     if ehealth > 0:
+                            if earmor > 0:
+                                ehealth = (ehealth - (attack / 2))
+                                earmor = (earmor - (attack / 2))
+                                if ehealth <= (eh * 0.25):
+                                    win()
+                                if ehealth > (eh * 0.25):
+                                    stats()
+                                    second = input("Would you like to escape? 'yes' or 'no'")
+                                    if second.lower() == ("yes"):
+                                        esc()
+                                    if second.lower() == ("no"):
+                                        dm2()
+                                    else:
+                                        print("try again")
+                                        wait_for_input()
+                                        clear_screen()
+                                        
+                            if earmor <= 0:
+                                ehealth = (ehealth - attack)
+                                if ehealth <= (eh * 0.25):
+                                    win()
+                                if ehealth > (eh * 0.25):
+                                    stats()
+                                second = input("Would you like to escape? 'yes' or 'no'")
+                                if second.lower() == ("yes"):
+                                    esc()
+                                if second.lower() == ("no"):
+                                    dm2()
+                                else:
+                                    print("try again")
+                                    wait_for_input()
+                                    clear_screen()
+                        
+        if perception > espeed:
+            if speed > esize:
+                attack = (attack * 1.3)
+                if size > esize:
+                    attack = (attack * 1.3)
+                if ehealth > 0:
+                    if earmor > 0:
+                        ehealth = (ehealth - (attack / 2))
+                        earmor = (earmor - (attack / 2))
+                        if health > 0:
+                            if armor > 0:
+                                health = (health - (eattack / 2))
+                                armor = (armor - (eattack / 2))
+                                if ehealth <= (eh * 0.25):
+                                    win()
+                                if ehealth > (eh * 0.25):
+                                    stats()
+                                    second = input("Would you like to escape? 'yes' or 'no'")
+                                    if second.lower() == ("yes"):
+                                        esc()
+                                    if second.lower() == ("no"):
+                                        dm2()
+                                    else:
+                                        print("try again")
+                                        wait_for_input()
+                                        clear_screen()
+                                        
+                            if armor <= 0:
+                                health = (health - eattack)
+                                if ehealth <= (eh * 0.25):
+                                    win()
+                                    if ehealth > (eh * 0.25):
+                                        stats()
+                                    second = input("Would you like to escape? 'yes' or 'no'")
+                                    if second.lower() == ("yes"):
+                                        esc()
+                                    if second.lower() == ("no"):
+                                        dm2()
+                                    else:
+                                        print("try again")
+                                        wait_for_input()
+                                        clear_screen()
+                        
+                    if earmor <= 0:
+                        ehealth = (ehealth - attack)
+                        if health > 0:
+                            if armor > 0:
+                                health = (health - (eattack / 2))
+                                armor = (armor - (eattack / 2))
+                                if ehealth <= (eh * 0.25):
+                                    win()
+                                if ehealth > (eh * 0.25):
+                                    stats()
+                                    second = input("Would you like to escape? 'yes' or 'no'")
+                                    if second.lower() == ("yes"):
+                                        esc()
+                                    if second.lower() == ("no"):
+                                        dm2()
+                                    else:
+                                        print("try again")
+                                        wait_for_input()
+                                        clear_screen()
+                                        
+                            if armor <= 0:
+                                health = (health - eattack)
+                                if ehealth <= (eh * 0.25):
+                                    win()
+                                    if ehealth > (eh * 0.25):
+                                        stats()
+                                    second = input("Would you like to escape? 'yes' or 'no'")
+                                    if second.lower() == ("yes"):
+                                        esc()
+                                    if second.lower() == ("no"):
+                                        dm2()
+                                    else:
+                                        print("try again")
+                                        wait_for_input()
+                                        clear_screen()
+                        
+            
+        if stealth < eperception:
+            if eperception > speed:
+                if espeed > size:
+                    eattack = (eattack * 1.3)
+                if esize > size:
+                    eattack = (eattack * 1.3)
+                if health > 0:
+                    if armor > 0:
+                        health = (health - (eattack / 2))
+                        armor = (armor - (eattack / 2))
+                        if ehealth > 0:
+                           if earmor > 0:
+                                ehealth = (ehealth - (attack / 2))
+                                earmor = (earmor - (attack / 2))
+                                if ehealth <= (eh * 0.25):
+                                    win()
+                                if ehealth > (eh * 0.25):
+                                    stats()
+                                    second = input("Would you like to escape? 'yes' or 'no'")
+                                    if second.lower() == ("yes"):
+                                        esc()
+                                    if second.lower() == ("no"):
+                                        dm2()
+                                    else:
+                                        print("try again")
+                                        wait_for_input()
+                                        clear_screen()
+                                        
+                           if earmor <= 0:
+                                ehealth = (ehealth - attack)
+                                if ehealth <= (eh * 0.25):
+                                    win()
+                                if ehealth > (eh * 0.25):
+                                    stats()
+                                second = input("Would you like to escape? 'yes' or 'no'")
+                                if second.lower() == ("yes"):
+                                    esc()
+                                if second.lower() == ("no"):
+                                    dm2()
+                                else:
+                                    print("try again")
+                                    wait_for_input()
+                                    clear_screen()
+                        
+                    if armor <= 0:
+                        health = (health - eattack)
+                        if ehealth > 0:
+                            if earmor > 0:
+                                ehealth = (ehealth - (attack / 2))
+                                earmor = (earmor - (attack / 2))
+                                if ehealth <= (eh * 0.25):
+                                    win()
+                                if ehealth > (eh * 0.25):
+                                    stats()
+                                second = input("Would you like to escape? 'yes' or 'no'")
+                                if second.lower() == ("yes"):
+                                    esc()
+                                if second.lower() == ("no"):
+                                    dm2()
+                                else:
+                                    print("try again")
+                                    wait_for_input()
+                                    clear_screen()
+                                        
+                    if earmor <= 0:
+                        ehealth = (ehealth - attack)
+                        if ehealth <= (eh * 0.25):
+                            win()
+                        if ehealth > (eh * 0.25):
+                            stats()
+                        second = input("Would you like to escape? 'yes' or 'no'")
+                        if second.lower() == ("yes"):
+                            esc()
+                        if second.lower() == ("no"):
+                            dm2()
+                        else:
+                            print("try again")
+                            wait_for_input()
+                            clear_screen()
+                        
+        if eperception < speed:
+            if speed > esize:
+                attack = (attack * 1.3)
+            if size > esize:
+                attack = (attack * 1.3)
+            if ehealth > 0:
+                if earmor > 0:
+                    ehealth = (ehealth - (attack / 2))
+                    earmor = (earmor - (attack / 2))
+                    if health > 0:
+                        if armor > 0:
+                            health = (health - (eattack / 2))
+                            armor = (armor - (eattack / 2))
+                            if ehealth <= (eh * 0.25):
+                                win()
+                            if ehealth > (eh * 0.25):
+                                stats()
+                                second = input("Would you like to escape? 'yes' or 'no'")
+                                if second.lower() == ("yes"):
+                                    esc()
+                                if second.lower() == ("no"):
+                                    dm2()
+                                else:
+                                    print("try again")
+                                    wait_for_input()
+                                    clear_screen()
+                                        
+                        if armor <= 0:
+                            health = (health - eattack)
+                            if ehealth <= (eh * 0.25):
+                                win()
+                                if ehealth > (eh * 0.25):
+                                    stats()
+                                second = input("Would you like to escape? 'yes' or 'no'")
+                                if second.lower() == ("yes"):
+                                    esc()
+                                if second.lower() == ("no"):
+                                    dm2()
+                                else:
+                                    print("try again")
+                                    wait_for_input()
+                                    clear_screen()
+                        
+                if earmor <= 0:
+                    ehealth = (ehealth - attack)
+                    if health > 0:
+                        if armor > 0:
+                            health = (health - (eattack / 2))
+                            armor = (armor - (eattack / 2))
+                            if ehealth <= (eh * 0.25):
+                                win()
+                            if ehealth > (eh * 0.25):
+                                stats()
+                                second = input("Would you like to escape? 'yes' or 'no'")
+                                if second.lower() == ("yes"):
+                                    esc()
+                                if second.lower() == ("no"):
+                                    dm2()
+                                else:
+                                    print("try again")
+                                    wait_for_input()
+                                    clear_screen()
+                                        
+                        if armor <= 0:
+                            health = (health - eattack)
+                            if ehealth <= (eh * 0.25):
+                                win()
+                                if ehealth > (eh * 0.25):
+                                    stats()
+                                second = input("Would you like to escape? 'yes' or 'no'")
+                                if second.lower() == ("yes"):
+                                    esc()
+                                if second.lower() == ("no"):
+                                    dm2()
+                                else:
+                                    print("try again")
+                                    wait_for_input()
+                                    clear_screen()   
+            
     #keys  
     key1 = False
     
-    #trading items
+    #enemy type+stats
+    etype = (0)
+    ehealth = (0)
+    earmor = (0)
+    eattack = (0)
+    espeed = (0)
+    estealth = (0)
+    esize = (0)
+    eperception = (0)
+   
+   #trading items
     fish = (0)
     coral = (0)
     snakes = (0)
     bugs = (0)
     
     #evolvthreat
-    evolvingthreathealth = (50)
+    evolvingthreathealth = (24)
     evolvingthreatform = (1)
     
     #didyoudodung1
@@ -399,6 +914,7 @@ if __name__ == '__main__':
    
    #materials
     gold = (0)
+    awardgold = (3)
     durability = (0)
     durability1 = (1)
     rustswordexist = True
@@ -434,14 +950,16 @@ if __name__ == '__main__':
     csize = (2)
     cperception = (0)
     
+    
     #you
     health = (10)
     armor = (5)
-    attack = (4)
+    attack = (2)
     speed = (3)
     stealth = (3)
     size = (3)
     perception = (5)
+    
     
     #lobster
     lhealth = (5)
@@ -608,14 +1126,14 @@ if __name__ == '__main__':
                 print("There is a shell close by.")
                 second = input("What do you do? ")
             
-                if second.lower() == ("3"):
+                if second.lower() == ("2"):
                     print("_________________________________________________________________________________")
                     print("There is a large hole to your right, the original tide pool behind you, ")
                     print("and deeper ocean in front of you. To your left, just a rocky area.")
                     wait_for_input()
                     clear_screen()
                     
-                elif second.lower() == ("4"):
+                elif second.lower() == ("3"):
                     if shell1 == (1):
                         print("_________________________________________________________________________________")
                         print("There is a shell. It can be fitted to part of your armor.")
@@ -1022,7 +1540,7 @@ if __name__ == '__main__':
             if loop == (8):
                 print("_________________________________________________________________________________")
                 print("You stand in some weeds.")
-                print("The might of the forest stands before you.")
+                print("The might of the forest (and a lot of bugs) stands before you.")
                 print("Proceed with caution.")
                 second = input("What do you do? ")
                 if second.lower() == ("2"):
@@ -1054,7 +1572,8 @@ if __name__ == '__main__':
                     clear_screen()
                 elif second.lower() == ("1"):
                     print("_________________________________________________________________________________")
-                    print("A tree gets cut up a little..")
+                    print("You fight a random ant.")
+                    ant()
                     wait_for_input()
                     clear_screen()
                 elif second.lower() == ("w"):
@@ -1181,8 +1700,8 @@ if __name__ == '__main__':
                     clear_screen()
                 elif second.lower() == ("1"):
                     print("_________________________________________________________________________________")
-                    print("You KICK A GIANT ANTHILL. You fight a good fight but get chased off.")
-                    health = (health - 5)
+                    print("You KICK A GIANT ANTHILL. You fight the good fight but get chased off.")
+                    health = (health - 3)
                     wait_for_input()
                     clear_screen()
                 elif second.lower() == ("w"):
